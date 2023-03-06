@@ -1,0 +1,369 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100%;
+  background: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#viewport {
+  background-color: #fff;
+  position: fixed;
+  top: 89.5%;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(130, 140, 150, 0.1),
+    0 -1px 0px rgba(120, 130, 140, 0.05);
+  z-index: 10;
+}
+
+.player-window {
+  width: 97.6%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.sound-details {
+  position: relative;
+  align-items: center;
+  width: 100%;
+}
+
+.sound-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.sound-info {
+  text-align: left;
+  margin-left: 15px;
+}
+
+.sound-title {
+  font-size: 13px;
+  color: #212529;
+  font-weight: 400;
+}
+
+.sound-artist {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+.sound-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.sound-controls {
+  margin-left: 400px;
+}
+
+.sound-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.sound-buttons i {
+  cursor: pointer;
+}
+
+.repeats {
+  margin-right: 30px;
+}
+
+.play-wrap {
+}
+
+.fa-shuffle {
+  font-size: 13px;
+}
+
+.play-wrap.playing {
+}
+
+.play-wrap.playing > .play {
+  box-sizing: content-box;
+  width: 2px;
+  height: 14px;
+  margin-left: 0;
+  border-right: calc(0.8em - 7px) solid #212529;
+  border-left: calc(0.8em - 7px) solid #212529;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.play {
+  width: 0;
+  height: 0;
+  border-right: 0;
+  border-left: 0.8em solid #212529;
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#change-wrap {
+  cursor: pointer;
+}
+
+#change-wrap:active {
+  box-shadow: inset 10px 10px 10px rgb(0, 0, 0),
+    inset -10px -10px 10px rgba(0, 0, 0, 0.6);
+}
+
+#change-wrap:active > .fas {
+  color: #000000 !important;
+}
+
+.fa-forward,
+.fa-backward,
+.fa-repeat,
+.fa-shuffle {
+  font-size: 13px;
+  color: #212529;
+}
+
+.download {
+  display: none;
+}
+.misc-wrap {
+  display: none;
+}
+
+.looping {
+}
+
+.looping > .fas {
+  color: #000000 !important;
+}
+
+.progress {
+  position: relative;
+  height: 3.2px;
+  width: 400px;
+  margin-top: 23px;
+  background: #dadee3;
+  cursor: pointer;
+}
+.sound-time {
+  display: flex;
+  flex-direction: row;
+  font-size: 11px;
+  position: absolute;
+  top: 38px;
+  color: #888;
+}
+.current-time {
+  margin-right: auto;
+  margin-left: 10%;
+  left: -34px;
+  position: absolute;
+}
+.duration {
+  margin-right: 10%;
+  margin-left: auto;
+  left: 408px;
+  position: absolute;
+}
+.played {
+  width: 0%;
+  height: 7px;
+  position: absolute;
+  background: #cba413;
+}
+
+.progress .played .circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  left: 5%;
+  top: -4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.406);
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 90%;
+  margin-left: 4%;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2%;
+}
+.field {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.sound-search {
+  z-index: 1;
+}
+
+.search-button {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.search-button:active {
+  box-shadow: inset -2px 12px 10px rgb(0 0 0 / 10%),
+    inset 16px 6px 10px rgb(255 255 255 / 60%);
+}
+
+.source-selector {
+  position: relative;
+  padding: 10px 0px 10px 0px;
+
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  width: 60%;
+  height: 1rem;
+  background: #e0e5ec;
+  box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+  cursor: pointer;
+  display: none;
+}
+.source-menu {
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  top: 100%;
+  left: 10%;
+  width: 198px;
+  font-size: 0.9em;
+  opacity: 0;
+  background: #e0e5ec;
+  border-radius: 15px;
+  box-shadow: 4px 8px 16px 0px #03043c21;
+}
+
+.menu-item {
+  color: #333333;
+  text-align: left;
+  padding: 14px 0px 0px 24px;
+  width: 198px;
+  height: 33px;
+  cursor: pointer;
+  background: rgba(157, 171, 192, 0);
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.samples-option {
+  border-top: 2px solid #f62e0b9c;
+}
+
+.menu-item:hover {
+  background: rgba(157, 171, 192, 0.3);
+}
+
+.playlist-window {
+  height: 700px !important;
+}
+.app-title {
+  display: none;
+
+  color: #f44336;
+  font-size: 1.9rem;
+  margin: 0;
+  margin-bottom: 15px;
+}
+.playlist-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .playlist-body {
+  display: grid;
+  flex-direction: column;
+  height: 90%;
+  overflow-y: auto;
+  border-top: 2px solid #f62e0b9c;
+} */
+
+.playlist-item {
+  display: flex;
+  flex-direction: column;
+  line-height: 1rem;
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.image-item {
+  background-image: url(http://music.flatfull.com/musicon/wp-content/uploads/sites/3/2022/03/1000x1000bb-19-300x300.jpg);
+  width: 580px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+.playlist-item:hover {
+  opacity: 0.7;
+  background: #cb31003d;
+  padding-left: 2.5%;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+
+.item-name {
+
+  color: #f44336;
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+}
+
+.artist-name {
+  margin: 0;
+
+  font-size: 0.8rem;
+}
